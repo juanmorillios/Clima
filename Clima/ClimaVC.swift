@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClimaVC: UIViewController {
+class ClimaVC: UIViewController{
     
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -21,7 +21,28 @@ class ClimaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        self.myTableView.delegate = self
+        self.myTableView.dataSource = self
+    }
+    
+  }
+
+extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
+        
+        return cell
+        
     }
 
-  }
+}
