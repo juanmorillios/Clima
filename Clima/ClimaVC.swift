@@ -15,6 +15,8 @@ class ClimaVC: UIViewController{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
+    
+    var currentWeather = CurrentWeather()
 
     @IBOutlet weak var myTableView: UITableView!
     
@@ -23,6 +25,12 @@ class ClimaVC: UIViewController{
 
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
+        
+        currentWeather.downloadWeatherDetails {
+            
+            
+            
+        }
         
         print(CURRENT_WEATHER_URL)
     }
