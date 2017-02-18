@@ -29,7 +29,6 @@ class ClimaVC: UIViewController{
         currentWeather.downloadWeatherDetails {
             
             
-            
         }
         
         print(CURRENT_WEATHER_URL)
