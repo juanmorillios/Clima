@@ -50,7 +50,7 @@ class CurrentWeather {
         
     }
     
-    func downloadWeatherDetails(completed: DownloadComplete) {
+    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         let curreentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
         
         
@@ -75,7 +75,7 @@ class CurrentWeather {
                     
                     if let currentTemperature = main["temp"] as? Double {
                         
-                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 559.67)
+                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
                         let kelvinToFirenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
                         self._currentTemp = kelvinToFirenheit
                         print(self._currentTemp)
@@ -84,8 +84,9 @@ class CurrentWeather {
                 }
                 
             }
+            completed()
         }
-        completed()
+    
     }
-}
 
+}
