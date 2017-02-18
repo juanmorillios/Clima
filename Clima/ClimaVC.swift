@@ -15,29 +15,26 @@ class ClimaVC: UIViewController{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
-    
-    var currentWeather = CurrentWeather()
-
     @IBOutlet weak var myTableView: UITableView!
+    
+    var currentWeather : CurrentWeather!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.myTableView.delegate = self
-        self.myTableView.dataSource = self
+        myTableView.delegate = self
+        myTableView.dataSource = self
         
+        currentWeather = CurrentWeather()
         currentWeather.downloadWeatherDetails {
-            
-            
+            self.updateMainUI()
         }
-        
-        print(CURRENT_WEATHER_URL)
     }
     
-  }
+}
 
 extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -53,5 +50,13 @@ extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
-
+    
+    func updateMainUI() {
+        datelabel.text = currentWeather.date
+        currentTempLabel.text = "\(currentWeather.currentTemp)"
+        currenWeatherTypeLabel.text = currentWeather.weatherType
+        locationLabel.text = currentWeather.cityName
+        curentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+    }
+    
 }
