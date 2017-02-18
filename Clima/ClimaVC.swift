@@ -23,6 +23,8 @@ class ClimaVC: UIViewController{
 
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
+        
+        print(CURRENT_WEATHER_URL)
     }
     
   }
