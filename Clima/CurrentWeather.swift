@@ -47,7 +47,6 @@ class CurrentWeather {
             _currentTemp = 0.0
         }
         return _currentTemp
-        
     }
     
     func downloadWeatherDetails(completed: @escaping DownloadComplete) {
@@ -68,9 +67,7 @@ class CurrentWeather {
                         self._weatherType = main.capitalized
                         print(self._weatherType)
                     }
-                    
                 }
-                
                 if let main = dict["main"] as? Dictionary<String, Any> {
                     
                     if let currentTemperature = main["temp"] as? Double {

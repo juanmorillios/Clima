@@ -16,7 +16,6 @@ class ClimaVC: UIViewController{
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
-    
     var currentWeather : CurrentWeather!
     
     override func viewDidLoad() {
@@ -48,7 +47,6 @@ extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
         
         return cell
-        
     }
     
     func updateMainUI() {
