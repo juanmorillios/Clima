@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ClimaVC: UIViewController{
     
@@ -18,6 +19,7 @@ class ClimaVC: UIViewController{
     @IBOutlet weak var myTableView: UITableView!
     var currentWeather : CurrentWeather!
     var forecast: Forecast!
+    var forecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +28,58 @@ class ClimaVC: UIViewController{
         myTableView.dataSource = self
         
         currentWeather = CurrentWeather()
-        forecast = Forecast()
+        //forecast = Forecast()
+        
         currentWeather.downloadWeatherDetails {
             self.updateMainUI()
         }
     }
     
+}
+
+
+    func downloadForecastData(completed: @escaping DownloadComplete) {
+        let forecastURL = URL(string: FORECAST_URL)!
+        Alamofire.request(forecastURL).responseJSON { (response) in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, Any> {
+                if let list = dict["list"] as? [Dictionary<String, Any>] {
+                
+                    for obj in list {
+                    
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecast.append(forecast)
+                    
+                    }
+                
+                }
+                
+                if let weather = dict["weather"] as? [Dictionary<String, Any>] {
+                    if let main = weather[0]["main"] as? String {
+                        self._weatherType = main.capitalized
+                        print(self._weatherType)
+                    }
+                }
+                if let main = dict["main"] as? Dictionary<String, Any> {
+                    
+                    if let currentTemperature = main["temp"] as? Double {
+                        
+                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
+                        let kelvinToFirenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
+                        self._currentTemp = kelvinToFirenheit
+                        print(self._currentTemp)
+                    }
+                    
+                }
+                
+            }
+           
+        }
+        
     }
 
 
-    func downloadForecastData(completed: DownloadComplete) {
-        let forecastURL = URL(string: "")
-    
-
-    }
 
     extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -67,3 +107,5 @@ class ClimaVC: UIViewController{
     }
     
     }
+
+
