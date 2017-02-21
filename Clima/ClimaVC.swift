@@ -31,16 +31,16 @@ class ClimaVC: UIViewController{
         //forecast = Forecast()
         
         currentWeather.downloadWeatherDetails {
+            
             self.updateMainUI()
         }
     }
     
 }
 
-
     func downloadForecastData(completed: @escaping DownloadComplete) {
         let forecastURL = URL(string: FORECAST_URL)!
-        Alamofire.request(forecastURL).responseJSON { (response) in
+        Alamofire.request(forecastURL).responseJSON { response in
             let result = response.result
             
             if let dict = result.value as? Dictionary<String, Any> {
@@ -49,7 +49,7 @@ class ClimaVC: UIViewController{
                     for obj in list {
                     
                         let forecast = Forecast(weatherDict: obj)
-                        self.forecast.append(forecast)
+                        self.forecats.append(forecast)
                     
                     }
                 
@@ -74,7 +74,7 @@ class ClimaVC: UIViewController{
                 }
                 
             }
-           
+           completed()
         }
         
     }
