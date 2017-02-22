@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 import Alamofire
 
-class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -17,6 +18,8 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
+    let locationManager = CLLocationManager()
+    var currentLocation : CLLocation!
     
     var currentWeather : CurrentWeather!
     var forecast: Forecast!
@@ -25,6 +28,12 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+        
+       
         myTableView.delegate = self
         myTableView.dataSource = self
         
@@ -35,6 +44,18 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                   self.updateMainUI()
             }
           
+        }
+    }
+    
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
+        }else {
+            locationManager.requestWhenInUseAuthorization()
+            locationAuthStatus()
         }
     }
     
