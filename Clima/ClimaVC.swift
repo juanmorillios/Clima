@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ClimaVC: UIViewController{
+class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -17,6 +17,7 @@ class ClimaVC: UIViewController{
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
+    
     var currentWeather : CurrentWeather!
     var forecast: Forecast!
     var forecasts = [Forecast]()
@@ -28,16 +29,15 @@ class ClimaVC: UIViewController{
         myTableView.dataSource = self
         
         currentWeather = CurrentWeather()
-        //forecast = Forecast()
         
         currentWeather.downloadWeatherDetails {
-            
-            self.updateMainUI()
+            self.downloadForecastData {
+                  self.updateMainUI()
+            }
+          
         }
     }
     
-}
-
     func downloadForecastData(completed: @escaping DownloadComplete) {
         let forecastURL = URL(string: FORECAST_URL)!
         Alamofire.request(forecastURL).responseJSON { response in
@@ -49,53 +49,39 @@ class ClimaVC: UIViewController{
                     for obj in list {
                     
                         let forecast = Forecast(weatherDict: obj)
-                        self.forecats.append(forecast)
-                    
+                        self.forecasts.append(forecast)
                     }
-                
-                }
-                
-                if let weather = dict["weather"] as? [Dictionary<String, Any>] {
-                    if let main = weather[0]["main"] as? String {
-                        self._weatherType = main.capitalized
-                        print(self._weatherType)
-                    }
-                }
-                if let main = dict["main"] as? Dictionary<String, Any> {
-                    
-                    if let currentTemperature = main["temp"] as? Double {
-                        
-                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
-                        let kelvinToFirenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
-                        self._currentTemp = kelvinToFirenheit
-                        print(self._currentTemp)
-                    }
-                    
+                    self.forecasts.remove(at: 0)
+                    self.myTableView.reloadData()
                 }
                 
             }
-           completed()
+            completed()
         }
         
     }
 
 
-
-    extension ClimaVC: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
         
-        return cell
+            let forecast = forecasts[indexPath.row]
+            cell.configureCell(forecast: forecast)
+            return cell
+        }else {
+        
+            return WeatherCell()
+        
+        }
     }
     
     func updateMainUI() {
@@ -106,6 +92,6 @@ class ClimaVC: UIViewController{
         curentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
     
-    }
+}
 
 
