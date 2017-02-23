@@ -33,18 +33,16 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         
-       
         myTableView.delegate = self
         myTableView.dataSource = self
         
         currentWeather = CurrentWeather()
         
-        currentWeather.downloadWeatherDetails {
-            self.downloadForecastData {
-                  self.updateMainUI()
-            }
-          
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        locationAuthStatus()
     }
     
     func locationAuthStatus() {
@@ -52,7 +50,12 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
             currentLocation = locationManager.location
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
-            
+            currentWeather.downloadWeatherDetails {
+                self.downloadForecastData {
+                    self.updateMainUI()
+                }
+            }
+
         }else {
             locationManager.requestWhenInUseAuthorization()
             locationAuthStatus()
@@ -60,15 +63,15 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     }
     
     func downloadForecastData(completed: @escaping DownloadComplete) {
-        let forecastURL = URL(string: FORECAST_URL)!
-        Alamofire.request(forecastURL).responseJSON { response in
+       //let forecastURL = URL(string: FORECAST_URL)
+        Alamofire.request(FORECAST_URL).responseJSON { response in
             let result = response.result
             
             if let dict = result.value as? Dictionary<String, Any> {
                 if let list = dict["list"] as? [Dictionary<String, Any>] {
                 
                     for obj in list {
-                    
+
                         let forecast = Forecast(weatherDict: obj)
                         self.forecasts.append(forecast)
                     }
@@ -81,7 +84,6 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
         }
         
     }
-
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -12,7 +12,6 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weatherType: UILabel!
-    
     @IBOutlet weak var lowTempLabel: UILabel!
     @IBOutlet weak var highTemp: UILabel!
     
