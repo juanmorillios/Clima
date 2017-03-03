@@ -18,6 +18,7 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     @IBOutlet weak var curentWeatherImage: UIImageView!
     @IBOutlet weak var currenWeatherTypeLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
+   
     let locationManager = CLLocationManager()
     var currentLocation : CLLocation!
     
@@ -27,7 +28,7 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -48,8 +49,8 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
-            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+//            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+//            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             currentWeather.downloadWeatherDetails {
                 self.downloadForecastData {
                     self.updateMainUI()
@@ -63,7 +64,6 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     }
     
     func downloadForecastData(completed: @escaping DownloadComplete) {
-       //let forecastURL = URL(string: FORECAST_URL)
         Alamofire.request(FORECAST_URL).responseJSON { response in
             let result = response.result
             
@@ -71,7 +71,6 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
                 if let list = dict["list"] as? [Dictionary<String, Any>] {
                 
                     for obj in list {
-
                         let forecast = Forecast(weatherDict: obj)
                         self.forecasts.append(forecast)
                     }
@@ -101,9 +100,7 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
             cell.configureCell(forecast: forecast)
             return cell
         }else {
-        
             return WeatherCell()
-        
         }
     }
     

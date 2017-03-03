@@ -57,7 +57,6 @@ class Forecast {
                 let kelvinToFarenheitPreDivision = (max * (9/5) - 459.67)
                 let kelvinToFirenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
                 self._highTemp = "\(kelvinToFirenheit)"
-                
             }
             
         }
@@ -66,7 +65,6 @@ class Forecast {
             
             if let main = weather[0]["main"] as? String {
                 self._weatherType = main
-                
             }
             
         }
@@ -79,20 +77,16 @@ class Forecast {
             dateFormatter.dateFormat = "EEEE"
             dateFormatter.timeStyle = .none
             self._date = unixConvertedDate.dayOfTheWeek()
-            
         }
         
     }
 }
 
 extension Date {
-    
     func dayOfTheWeek() -> String {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: self)
-        
     }
     
 }

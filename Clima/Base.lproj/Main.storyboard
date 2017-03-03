@@ -67,7 +67,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="w4K-mu-7oi" firstAttribute="leading" secondItem="dZm-EC-cIm" secondAttribute="trailing" constant="20" id="BIL-tM-ueZ"/>
                                     <constraint firstAttribute="bottom" secondItem="dZm-EC-cIm" secondAttribute="bottom" constant="20" id="HIm-VX-pxz"/>
@@ -81,7 +81,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="08L-1p-006">
                                 <rect key="frame" x="0.0" y="300" width="375" height="367"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherCell" rowHeight="86" id="S0S-0o-qs4" customClass="WeatherCell" customModule="Clima" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
@@ -91,14 +91,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-3a-rYt">
-                                                    <rect key="frame" x="16" y="24.5" width="50" height="50"/>
+                                                    <rect key="frame" x="16" y="24" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="51W-dk-Q9n"/>
                                                         <constraint firstAttribute="height" constant="50" id="pa9-GC-v2H"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zDr-x0-1lE">
-                                                    <rect key="frame" x="86" y="26.5" width="273" height="50"/>
+                                                    <rect key="frame" x="86" y="26" width="273" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qSl-Ol-PAT">
                                                             <rect key="frame" x="0.0" y="0.0" width="99" height="50"/>
@@ -112,7 +112,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqb-Sc-Hgx">
                                                                     <rect key="frame" x="0.0" y="25" width="54" height="25"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="1" green="0.52904134989999996" blue="0.0080108819529999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -132,7 +132,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65.3°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4S-xD-4PY">
                                                                             <rect key="frame" x="0.0" y="25" width="42" height="25"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="textColor" red="1" green="0.52904134989999996" blue="0.0080108819529999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -142,7 +142,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.52549019610000003" green="0.82745098039999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="zDr-x0-1lE" firstAttribute="leading" secondItem="nbB-3a-rYt" secondAttribute="trailing" constant="20" id="9Yy-wU-M7a"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zDr-x0-1lE" secondAttribute="bottom" constant="15" id="L7C-z7-TFy"/>
@@ -153,6 +153,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="nbB-3a-rYt" secondAttribute="bottom" constant="17" id="mtc-br-OPz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.82352941180000006" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dayLabel" destination="uRL-ca-hYm" id="RsP-g5-hvG"/>

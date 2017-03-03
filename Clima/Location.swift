@@ -9,7 +9,6 @@
 import CoreLocation
 
 class Location {
-
     static var sharedInstance = Location()
     private init() {}
     

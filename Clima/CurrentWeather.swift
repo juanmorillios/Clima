@@ -28,7 +28,7 @@ class CurrentWeather {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         let currentDate = dateFormatter.string(from: Date())
         self._date = "Today, \(currentDate)"
@@ -52,6 +52,7 @@ class CurrentWeather {
     func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         Alamofire.request(CURRENT_WEATHER_URL).responseJSON { response in
             let result = response.result
+            
             if let dict = result.value as? Dictionary<String, Any> {
                 
                 if let name = dict["name"] as? String {
@@ -70,7 +71,7 @@ class CurrentWeather {
                     
                     if let currentTemperature = main["temp"] as? Double {
                         
-                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
+                       let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
                         let kelvinToFirenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
                         self._currentTemp = kelvinToFirenheit
                         print(self._currentTemp)
