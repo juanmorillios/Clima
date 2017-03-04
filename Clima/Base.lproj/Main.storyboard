@@ -51,7 +51,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w4K-mu-7oi">
                                         <rect key="frame" x="210" y="100" width="145" height="180"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5B3-tU-t3f">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5B3-tU-t3f">
                                                 <rect key="frame" x="12.5" y="0.0" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="pPz-TN-zve"/>
@@ -66,11 +66,29 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20L-Ls-N2h">
+                                        <rect key="frame" x="345" y="34" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="Gci-Ua-1tZ"/>
+                                            <constraint firstAttribute="height" constant="22" id="t2I-4t-WWP"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="VsO-iL-zfa" kind="show" id="J0x-8z-LQp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="w4K-mu-7oi" firstAttribute="leading" secondItem="dZm-EC-cIm" secondAttribute="trailing" constant="20" id="BIL-tM-ueZ"/>
                                     <constraint firstAttribute="bottom" secondItem="dZm-EC-cIm" secondAttribute="bottom" constant="20" id="HIm-VX-pxz"/>
+                                    <constraint firstAttribute="trailing" secondItem="20L-Ls-N2h" secondAttribute="trailing" constant="8" id="HWS-Dz-Fsk"/>
+                                    <constraint firstItem="20L-Ls-N2h" firstAttribute="leading" secondItem="dZm-EC-cIm" secondAttribute="trailing" constant="155" id="LKa-Ad-nuq"/>
+                                    <constraint firstItem="w4K-mu-7oi" firstAttribute="top" secondItem="20L-Ls-N2h" secondAttribute="bottom" constant="44" id="NLm-oa-V44"/>
+                                    <constraint firstItem="20L-Ls-N2h" firstAttribute="top" secondItem="TIO-gb-zhH" secondAttribute="top" constant="34" id="RTC-rY-Axm"/>
                                     <constraint firstItem="w4K-mu-7oi" firstAttribute="top" secondItem="TIO-gb-zhH" secondAttribute="top" constant="100" id="YbL-gE-cIU"/>
                                     <constraint firstAttribute="trailing" secondItem="w4K-mu-7oi" secondAttribute="trailing" constant="20" id="cKV-VP-Oeb"/>
                                     <constraint firstItem="dZm-EC-cIm" firstAttribute="top" secondItem="TIO-gb-zhH" secondAttribute="top" constant="20" id="heT-L2-JD4"/>
@@ -132,7 +150,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65.3°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4S-xD-4PY">
                                                                             <rect key="frame" x="0.0" y="25" width="42" height="25"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <color key="textColor" red="1" green="0.52904134989999996" blue="0.0080108819529999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="1" green="0.52941176470588236" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -190,5 +208,46 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="58.920539730134934"/>
         </scene>
+        <!--InfoVC-->
+        <scene sceneID="2q1-Zy-lpu">
+            <objects>
+                <viewController id="VsO-iL-zfa" customClass="InfoVC" customModule="Clima" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y1e-On-PoN"/>
+                        <viewControllerLayoutGuide type="bottom" id="qX2-XB-WNJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PGt-UU-8QS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsK-yK-Hwv">
+                                <rect key="frame" x="345" y="28" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="AOT-lR-R5B"/>
+                                    <constraint firstAttribute="height" constant="30" id="TaY-tW-P9e"/>
+                                </constraints>
+                                <state key="normal" image="ButtonCancel">
+                                    <color key="titleColor" red="0.1019607843" green="0.82352941180000006" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeBtnPressed:" destination="VsO-iL-zfa" eventType="touchUpInside" id="7px-WW-FF3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="QsK-yK-Hwv" firstAttribute="top" secondItem="y1e-On-PoN" secondAttribute="bottom" constant="8" id="FeP-fA-png"/>
+                            <constraint firstItem="qX2-XB-WNJ" firstAttribute="top" secondItem="QsK-yK-Hwv" secondAttribute="bottom" constant="609" id="Lxz-Dg-fgI"/>
+                            <constraint firstAttribute="trailing" secondItem="QsK-yK-Hwv" secondAttribute="trailing" id="Yv9-ER-C4Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jx-Ug-V9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="59"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ButtonCancel" width="70" height="70"/>
+    </resources>
 </document>
