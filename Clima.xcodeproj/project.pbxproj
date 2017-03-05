@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8703EBC51E57662500B1716F /* Clima */,
+				87DF4FFB1E6C41A90000B0B6 /* Supporting Files */,
 				8703EBDA1E57662500B1716F /* ClimaTests */,
 				8703EBE51E57662500B1716F /* ClimaUITests */,
 				8703EBC41E57662500B1716F /* Products */,
@@ -149,18 +150,9 @@
 		8703EBC51E57662500B1716F /* Clima */ = {
 			isa = PBXGroup;
 			children = (
-				8703EBC61E57662500B1716F /* AppDelegate.swift */,
-				8703EBCA1E57662500B1716F /* Main.storyboard */,
-				8703EBF41E576CCC00B1716F /* ClimaVC.swift */,
-				87C00FF81E5DE1D8006A1D64 /* WeatherCell.swift */,
-				872E79AA1E586D250082EA48 /* CurrentWeather.swift */,
-				87F85FAC1E5BA1F6006BF196 /* Forecast.swift */,
-				872E79A81E5868810082EA48 /* Constants.swift */,
-				8703EBCD1E57662500B1716F /* Assets.xcassets */,
-				8703EBCF1E57662500B1716F /* LaunchScreen.storyboard */,
-				8703EBD21E57662500B1716F /* Info.plist */,
-				87C00FFA1E5DF89E006A1D64 /* Location.swift */,
-				875CAF9B1E6AF3D90090CF94 /* InfoVC.swift */,
+				87DF4FFA1E6C41780000B0B6 /* Model */,
+				87DF4FF91E6C41410000B0B6 /* View */,
+				87DF4FFC1E6C41EA0000B0B6 /* Controller */,
 			);
 			path = Clima;
 			sourceTree = "<group>";
@@ -181,6 +173,47 @@
 				8703EBE81E57662500B1716F /* Info.plist */,
 			);
 			path = ClimaUITests;
+			sourceTree = "<group>";
+		};
+		87DF4FF91E6C41410000B0B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8703EBCA1E57662500B1716F /* Main.storyboard */,
+				8703EBCF1E57662500B1716F /* LaunchScreen.storyboard */,
+				87C00FF81E5DE1D8006A1D64 /* WeatherCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		87DF4FFA1E6C41780000B0B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				872E79AA1E586D250082EA48 /* CurrentWeather.swift */,
+				87F85FAC1E5BA1F6006BF196 /* Forecast.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		87DF4FFB1E6C41A90000B0B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8703EBCD1E57662500B1716F /* Assets.xcassets */,
+				8703EBD21E57662500B1716F /* Info.plist */,
+				8703EBC61E57662500B1716F /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			path = Clima;
+			sourceTree = "<group>";
+		};
+		87DF4FFC1E6C41EA0000B0B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8703EBF41E576CCC00B1716F /* ClimaVC.swift */,
+				875CAF9B1E6AF3D90090CF94 /* InfoVC.swift */,
+				87C00FFA1E5DF89E006A1D64 /* Location.swift */,
+				872E79A81E5868810082EA48 /* Constants.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
