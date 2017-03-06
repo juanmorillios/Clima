@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,21 +18,33 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Hk-UY-BTH">
-                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudRainThunder" translatesAutoresizingMaskIntoConstraints="NO" id="2Hk-UY-BTH">
+                                <rect key="frame" x="107" y="267.66666666666669" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Bb4-qU-eYs"/>
-                                    <constraint firstAttribute="width" constant="240" id="gJS-d3-KfD"/>
+                                    <constraint firstAttribute="width" constant="200" id="9iV-IA-2a4"/>
+                                    <constraint firstAttribute="height" constant="200" id="b81-4Q-U8c"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2z-j8-rwp">
+                                <rect key="frame" x="195" y="475.66666666666674" width="23" height="46.333333333333258"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="gP8-7G-bz4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="9"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2Hk-UY-BTH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0sG-yu-rb4"/>
-                            <constraint firstItem="2Hk-UY-BTH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4Bs-cL-1AW"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="H2z-j8-rwp" secondAttribute="bottom" constant="214" id="QGe-ii-NfC"/>
+                            <constraint firstItem="H2z-j8-rwp" firstAttribute="centerX" secondItem="2Hk-UY-BTH" secondAttribute="centerX" id="YVM-dp-0Ug"/>
+                            <constraint firstItem="H2z-j8-rwp" firstAttribute="top" secondItem="2Hk-UY-BTH" secondAttribute="bottom" constant="8" symbolic="YES" id="aKy-8c-o2c"/>
+                            <constraint firstItem="2Hk-UY-BTH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-0.5" id="fDn-JW-fQq"/>
+                            <constraint firstItem="2Hk-UY-BTH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sE5-Fr-RFX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +54,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="16" height="16"/>
+        <image name="CloudRainThunder" width="101" height="117"/>
     </resources>
 </document>

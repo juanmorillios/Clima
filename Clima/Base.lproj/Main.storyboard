@@ -233,20 +233,18 @@
                                     <action selector="closeBtnPressed:" destination="VsO-iL-zfa" eventType="touchUpInside" id="7px-WW-FF3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-5n-7ki">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-5n-7ki">
                                 <rect key="frame" x="149" y="83" width="116" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_OpenWeatherMap_orange" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-IL-xzx">
-                                <rect key="frame" x="0.0" y="123" width="414" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4JZ-Cy-OE8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="4JZ-Cy-OE8">
                                 <rect key="frame" x="143" y="174" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="3Lu-HJ-csJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="mo6-oI-uBS"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udU-yw-Z6i">
                                 <rect key="frame" x="196" y="290" width="23" height="12"/>
@@ -255,32 +253,57 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Designed and Developed " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auZ-d3-lcR">
-                                <rect key="frame" x="71" y="603" width="273" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7V-5x-cQ6">
-                                <rect key="frame" x="71" y="632" width="273" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@juanmorillios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc7-eI-JDB">
-                                <rect key="frame" x="71" y="661" width="273" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lva-9r-pRs">
+                                <rect key="frame" x="103" y="605" width="208" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed and Developed " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auZ-d3-lcR">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7V-5x-cQ6">
+                                        <rect key="frame" x="0.0" y="21" width="208" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@juanmorillios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc7-eI-JDB">
+                                        <rect key="frame" x="0.0" y="42" width="208" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="QCL-DW-VxV"/>
+                                    <constraint firstAttribute="height" constant="63" id="uR3-Yz-3Sl"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_OpenWeatherMap_orange" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-IL-xzx">
+                                <rect key="frame" x="52" y="115" width="311" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="Jvo-um-mJv"/>
+                                    <constraint firstAttribute="height" constant="28" id="mA2-vg-LTC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="j9d-5n-7ki" firstAttribute="top" secondItem="y1e-On-PoN" secondAttribute="bottom" constant="63" id="2aE-qy-hf0"/>
                             <constraint firstItem="QsK-yK-Hwv" firstAttribute="top" secondItem="y1e-On-PoN" secondAttribute="bottom" id="BEc-0R-Jar"/>
+                            <constraint firstItem="qX2-XB-WNJ" firstAttribute="top" secondItem="lva-9r-pRs" secondAttribute="bottom" constant="68" id="H3I-bT-TMI"/>
+                            <constraint firstItem="4JZ-Cy-OE8" firstAttribute="top" secondItem="PwB-IL-xzx" secondAttribute="bottom" constant="31" id="HfQ-Tw-otW"/>
+                            <constraint firstItem="PwB-IL-xzx" firstAttribute="leading" secondItem="PGt-UU-8QS" secondAttribute="leadingMargin" constant="32" id="L5s-VR-7s7"/>
                             <constraint firstAttribute="trailing" secondItem="QsK-yK-Hwv" secondAttribute="trailing" id="LF0-CN-5AK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4JZ-Cy-OE8" secondAttribute="trailing" constant="123" id="LXx-eR-FSv"/>
+                            <constraint firstItem="4JZ-Cy-OE8" firstAttribute="leading" secondItem="PGt-UU-8QS" secondAttribute="leadingMargin" constant="123" id="OKR-TF-D95"/>
+                            <constraint firstItem="lva-9r-pRs" firstAttribute="centerX" secondItem="PGt-UU-8QS" secondAttribute="centerX" id="Q0f-va-xu2"/>
+                            <constraint firstItem="qX2-XB-WNJ" firstAttribute="top" secondItem="4JZ-Cy-OE8" secondAttribute="bottom" constant="434" id="SDt-y2-1dd"/>
+                            <constraint firstItem="j9d-5n-7ki" firstAttribute="leading" secondItem="PGt-UU-8QS" secondAttribute="leadingMargin" constant="129" id="Vkd-na-zp0"/>
+                            <constraint firstItem="PwB-IL-xzx" firstAttribute="top" secondItem="j9d-5n-7ki" secondAttribute="bottom" constant="8" id="Ygl-zx-7mD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PwB-IL-xzx" secondAttribute="trailing" constant="31" id="uCW-Ws-7Vj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j9d-5n-7ki" secondAttribute="trailing" constant="129" id="wdd-X9-HJa"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -291,7 +314,7 @@
     </scenes>
     <resources>
         <image name="ButtonCancel" width="70" height="70"/>
-        <image name="logo" width="341" height="349"/>
+        <image name="LogoWhite" width="362" height="354"/>
         <image name="logo_OpenWeatherMap_orange" width="1454" height="140"/>
     </resources>
 </document>
