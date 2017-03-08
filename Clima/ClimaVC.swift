@@ -49,8 +49,8 @@ class ClimaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLL
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-//            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
-//            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+      //     Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+       //     Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             currentWeather.downloadWeatherDetails {
                 self.downloadForecastData {
                     self.updateMainUI()
